@@ -4,10 +4,10 @@ import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
 
 @Component({
-    selector: "app-home",
-    imports: [CommonModule],
-    templateUrl: "./home.component.html",
-    styleUrl: "./home.component.scss"
+	selector: "app-home",
+	imports: [CommonModule],
+	templateUrl: "./home.component.html",
+	styleUrl: "./home.component.scss",
 })
 export class HomeComponent {
 	discountProducts: any[] = [];
@@ -28,6 +28,7 @@ export class HomeComponent {
 	}
 
 	ngOnInit() {
+		console.log("hello");
 		this.fetchData();
 	}
 }
