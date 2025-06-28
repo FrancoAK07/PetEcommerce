@@ -28,7 +28,6 @@ export class HomeComponent {
 	}
 
 	ngOnInit() {
-		console.log("hello");
 		this.fetchData();
 	}
 }
