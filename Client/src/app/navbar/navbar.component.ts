@@ -93,7 +93,6 @@ export class NavbarComponent {
 
 		this.cartService.numberOfItems$.subscribe((products) => {
 			this.numberOfItems = products.length;
-			console.log(products);
 		});
 
 		this.auth.loggedIn$.subscribe((loggedIn) => {

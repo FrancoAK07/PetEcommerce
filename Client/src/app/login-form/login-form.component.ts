@@ -38,11 +38,8 @@ export class LoginFormComponent {
 			password: this.userPassword,
 		};
 
-		console.log(user);
-
 		this.api.logInUser(user).subscribe({
 			next: (response) => {
-				console.log("User logged in successfully:", response);
 				this.showSnackbar("Login successful!", "successful-snackbar");
 				this.userEmail = "";
 				this.userPassword = "";

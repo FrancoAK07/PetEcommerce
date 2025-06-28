@@ -27,10 +27,6 @@ export class RegisterFormComponent {
 	}
 
 	submit() {
-		console.log(this.userName);
-		console.log(this.userPassword);
-		console.log(this.userEmail);
-
 		if (!this.userName || !this.userEmail || !this.userPassword) {
 			console.error("All fields are required.");
 			this.showSnackbar("All fields are required.", "warning-snackbar");
@@ -44,7 +40,6 @@ export class RegisterFormComponent {
 
 		this.api.createUser(user).subscribe({
 			next: (response) => {
-				console.log("User created successfully:", response);
 				this.showSnackbar("Signed up successfuly!", "successful-snackbar");
 				this.userName = "";
 				this.userEmail = "";

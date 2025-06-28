@@ -33,7 +33,6 @@ export class StoreComponent {
 			next: (response) => {
 				this.currentProducts = response;
 				this.isLoading = false;
-				console.log("all products");
 			},
 			error: (e) => console.error(e),
 		});
