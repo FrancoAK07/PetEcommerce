@@ -1,0 +1,67 @@
+<div class="home">
+	<div class="home-header column is-full p-0 pb-1">
+		<img class="petshome p-0 column is-full m-0" src="assets/images/petsHome.jpg" alt="" />
+		<div class="home-title is-flex is-align-items-center">
+			<img class="petlogo" src="assets/images/petlogo.jpg" alt="" />
+			<p class="is-size-1 has-text-link">PetsHome</p>
+		</div>
+	</div>
+
+	<div class="container pt-5 pb-5">
+		<div
+			class="food-section has-background-grey p-3 column is-full-desktop is-three-quarters-tablet is-four-fifths-mobile mx-auto">
+			<p class="food-title has-text-white is-size-3 has-text-centered">Shop By Pet</p>
+			<div class="columns is-multiline is-relative p-4">
+				<div class="image column has-text-centered has-text-white is-half-tablet is-one-quarter-desktop">
+					<a (click)="goToStore('dog')">
+						<img class="petIcon is-rounded mx-auto" src="assets/images/dogIcon.webp" alt="" />
+					</a>
+					<p class="is-size-3">Dog</p>
+				</div>
+				<div class="image column has-text-centered has-text-white is-half-tablet is-one-quarter-desktop">
+					<a (click)="goToStore('cat')">
+						<img class="petIcon is-rounded mx-auto" src="assets/images/catIcon.webp" alt="" />
+					</a>
+					<p class="is-size-3">Cat</p>
+				</div>
+				<div class="image column has-text-centered has-text-white is-half-tablet is-one-quarter-desktop">
+					<a (click)="goToStore('bird')">
+						<img class="petIcon is-rounded mx-auto" src="assets/images/birdIcon.webp" alt="" />
+					</a>
+					<p class="is-size-3">Bird</p>
+				</div>
+				<div class="image column has-text-centered has-text-white is-half-tablet is-one-quarter-desktop">
+					<a (click)="goToStore('fish')">
+						<img class="petIcon is-rounded mx-auto" src="assets/images/fishIcon.jpg" alt="" />
+					</a>
+					<p class="is-size-3">Fish</p>
+				</div>
+			</div>
+		</div>
+
+		<div
+			class="toys-section has-background-grey p-3 mt-4 column is-full-desktop is-three-quarters-tablet is-four-fifths-mobile mx-auto">
+			<p class="food-title has-text-white is-size-3 has-text-centered">Shop By Product Type</p>
+			<div class="columns is-multiline is-relative p-4">
+				<div class="image column has-text-centered has-text-white is-half-tablet is-one-third-desktop">
+					<a (click)="goToStore('food')">
+						<img class="productTypeIcon is-rounded mx-auto" src="assets/images/foodIcon2.jpg" alt="" />
+					</a>
+					<p class="is-size-3">Food</p>
+				</div>
+				<div class="image column has-text-centered has-text-white is-half-tablet is-one-third-desktop">
+					<a (click)="goToStore('toys')">
+						<img class="productTypeIcon is-rounded mx-auto" src="assets/images/toysIcon2.jpg" alt="" />
+					</a>
+					<p class="is-size-3">Toys</p>
+				</div>
+				<div class="image column has-text-centered has-text-white is-half-tablet is-one-third-desktop">
+					<a (click)="goToStore('grooming')">
+						<img class="productTypeIcon is-rounded mx-auto" src="assets/images/groomingIcon3.jpg" alt="" />
+					</a>
+					<p class="is-size-3">Pet Care</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

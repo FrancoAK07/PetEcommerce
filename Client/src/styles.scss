@@ -1,0 +1,36 @@
+@use "@angular/material" as mat;
+
+body {
+	min-height: 100dvh;
+	background-color: rgb(190, 190, 190);
+}
+
+.successful-snackbar {
+	@include mat.snack-bar-overrides(
+		(
+			container-color: rgb(0, 201, 77),
+			supporting-text-color: white,
+			button-color: white,
+		)
+	);
+}
+
+.error-snackbar {
+	@include mat.snack-bar-overrides(
+		(
+			container-color: rgb(224, 0, 0),
+			supporting-text-color: white,
+			button-color: white,
+		)
+	);
+}
+
+.warning-snackbar {
+	@include mat.snack-bar-overrides(
+		(
+			container-color: rgb(218, 226, 0),
+			supporting-text-color: white,
+			button-color: white,
+		)
+	);
+}

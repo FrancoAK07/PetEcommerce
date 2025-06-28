@@ -1,0 +1,33 @@
+.navbar {
+	position: sticky;
+	top: 0%;
+	height: 70px;
+}
+
+.hamburger-div {
+	height: 100% !important;
+}
+
+.cart-icon {
+	position: relative;
+}
+
+.cart-number {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	color: white;
+	background-color: red;
+	border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+	.cart-number {
+		position: absolute;
+		right: 87%;
+		top: 0;
+		color: white;
+		background-color: red;
+		border-radius: 50%;
+	}
+}

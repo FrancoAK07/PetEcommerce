@@ -1,0 +1,15 @@
+.product-img {
+	width: 100px;
+	height: 100px;
+}
+
+.table {
+	border-bottom: 2px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+	.qtyBtn {
+		display: block;
+		margin: auto !important;
+	}
+}

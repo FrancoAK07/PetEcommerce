@@ -1,0 +1,84 @@
+.petshome {
+	height: 100%;
+	width: 100%;
+	border-bottom-left-radius: 5%;
+	border-bottom-right-radius: 5%;
+}
+
+.home-header {
+	height: 500px;
+}
+@media only screen and (max-width: 768px) {
+	.home-header {
+		height: 280px;
+		width: 100%;
+	}
+}
+
+.dogs-column,
+.cats-column {
+	position: relative;
+}
+
+.dogs,
+.cats {
+	position: absolute;
+	left: 50%;
+	right: 50%;
+	top: 5%;
+}
+
+.dogs-img,
+.cats-img {
+	width: 100%;
+}
+
+.home-header {
+	position: relative;
+}
+
+.home-title {
+	position: absolute;
+	left: 5%;
+	top: 0%;
+}
+
+.petlogo {
+	height: 65px;
+}
+
+.food-img {
+	height: 150px;
+	width: 100%;
+}
+
+.food-section,
+.medicine-section,
+.toys-section {
+	border-radius: 8px;
+}
+
+.product {
+	height: auto;
+}
+
+.initialprice {
+	text-decoration-line: line-through;
+}
+
+.petIcon,
+.productTypeIcon {
+	width: 250px;
+	height: 250px;
+}
+
+.petIcon:hover,
+.productTypeIcon:hover {
+	outline-style: solid;
+	outline-color: rgb(30, 255, 150);
+}
+
+// .home {
+// 	background-image: url("/assets/images/homeBackground3.jpg");
+// 	background-size: cover;
+// }

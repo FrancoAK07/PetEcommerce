@@ -1,0 +1,47 @@
+<div class="cart container">
+	<h1 class="has-text-centered is-size-1 has-text-weight-bold">My Cart</h1>
+	<div *ngIf="cartProducts.length > 0">
+		<div class="table-container mb-0">
+			<table class="table is-fullwidth is-striped has-text-centered">
+				<thead>
+					<tr>
+						<th class="has-text-centered">Item</th>
+						<th class="has-text-centered">Name</th>
+						<th class="has-text-centered">Unit Price</th>
+						<th class="has-text-centered">Quantity</th>
+						<th class="has-text-centered">Item Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let product of cartProducts">
+						<td class="is-vcentered">
+							<img class="product-img" [src]="product.img" alt="" />
+						</td>
+						<td class="is-vcentered">{{ product.name }}</td>
+						<td class="is-vcentered">${{ product.price }}</td>
+						<td class="is-vcentered">
+							<button (click)="substractQty(product.name)" class="qtyBtn button is-link py-0 mr-2">-</button> {{ product.qty }}
+							<button (click)="addQty(product.name)" class="qtyBtn button is-link py-0 ml-2">+</button>
+						</td>
+						<td class="is-vcentered">${{ (product.qty * product.price).toFixed(2) }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="order-summary has-background-white py-3 mb-5">
+			<p class="is-size-4 has-text-centered">Order Summary</p>
+			<div class="columns">
+				<div class="column has-text-centered px-0">Items: {{ totalItems }}</div>
+				<div class="column has-text-centered px-0">Total: ${{ totalPrice.toFixed(2) }}</div>
+			</div>
+			<div class="has-text-centered">
+				<button class="button is-link">Checkout</button>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="cartProducts.length === 0">
+		<div class="has-text-centered">
+			<h1 class="is-size-1 has-text-white">Your cart is empty!</h1>
+		</div>
+	</div>
+</div>
