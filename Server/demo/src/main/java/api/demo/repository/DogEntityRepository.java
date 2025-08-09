@@ -1,6 +1,6 @@
 package api.demo.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-import api.demo.API.Model.DogEntity;
+import api.demo.model.DogEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import java.util.List;

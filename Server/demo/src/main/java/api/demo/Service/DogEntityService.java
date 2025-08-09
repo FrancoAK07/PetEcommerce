@@ -1,5 +1,5 @@
-package api.demo.Service;
-import api.demo.API.Model.DogEntity;
+package api.demo.service;
+import api.demo.model.DogEntity;
 import java.util.List;
 
 public interface DogEntityService {

@@ -1,6 +1,6 @@
 package api.demo.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-import api.demo.API.Model.FishEntity;
+import api.demo.model.FishEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import java.util.List;

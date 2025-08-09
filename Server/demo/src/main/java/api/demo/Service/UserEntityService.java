@@ -1,5 +1,5 @@
-package api.demo.Service;
-import api.demo.API.Model.UserEntity;
+package api.demo.service;
+import api.demo.model.UserEntity;
 
 import java.util.List;
 import java.util.Optional;

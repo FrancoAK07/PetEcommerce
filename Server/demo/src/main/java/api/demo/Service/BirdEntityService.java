@@ -1,5 +1,5 @@
-package api.demo.Service;
-import api.demo.API.Model.BirdEntity;
+package api.demo.service;
+import api.demo.model.BirdEntity;
 import java.util.List;
 
 public interface BirdEntityService {

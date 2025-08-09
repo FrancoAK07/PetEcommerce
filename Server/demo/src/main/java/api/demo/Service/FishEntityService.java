@@ -1,5 +1,5 @@
-package api.demo.Service;
-import api.demo.API.Model.FishEntity;
+package api.demo.service;
+import api.demo.model.FishEntity;
 import java.util.List;
 
 public interface FishEntityService {

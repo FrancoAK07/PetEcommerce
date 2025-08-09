@@ -1,5 +1,5 @@
-package api.demo.Service;
-import api.demo.API.Model.CatEntity;
+package api.demo.service;
+import api.demo.model.CatEntity;
 import java.util.List;
 
 public interface CatEntityService {

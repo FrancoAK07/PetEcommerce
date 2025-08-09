@@ -1,6 +1,6 @@
 package api.demo.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-import api.demo.API.Model.UserEntity;
+import api.demo.model.UserEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
