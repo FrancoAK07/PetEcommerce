@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { CartService } from "../services/cart.service";
-import { Product } from "../models/product.model";
+import { CartService } from "../../core/services/cart.service";
+import { Product } from "../../shared/models/product.model";
 import { CommonModule } from "@angular/common";
 
 @Component({

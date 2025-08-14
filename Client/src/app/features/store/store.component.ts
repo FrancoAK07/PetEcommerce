@@ -1,8 +1,8 @@
 import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ApiService } from "../services/api.service";
-import { CartService } from "../services/cart.service";
-import { Product } from "../models/product.model";
+import { ApiService } from "../../core/services/api.service";
+import { CartService } from "../../core/services/cart.service";
+import { Product } from "../../shared/models/product.model";
 import { ActivatedRoute } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 
@@ -17,7 +17,8 @@ export class StoreComponent {
 	@ViewChild("products") products!: ElementRef;
 	@ViewChild("productCard") productCard!: ElementRef;
 	sidebarVisible: boolean = false;
-	currentProducts: any[] = [];
+	currentProducts: Product[] = [];
+	filteredProducts: Product[] = [];
 	searchTerm: string = "";
 	isLoading: boolean = true;
 
@@ -28,10 +29,12 @@ export class StoreComponent {
 		private route: ActivatedRoute
 	) {}
 
-	fetchData() {
+	getAllProducts() {
+		this.isLoading = true;
 		this.api.getAllProducts().subscribe({
 			next: (response) => {
 				this.currentProducts = response;
+				this.filteredProducts = response;
 				this.isLoading = false;
 			},
 			error: (e) => console.error(e),
@@ -39,9 +42,11 @@ export class StoreComponent {
 	}
 
 	getCatProducts() {
+		this.isLoading = true;
 		this.api.getCatProducts().subscribe({
 			next: (response) => {
 				this.currentProducts = response;
+				this.filteredProducts = response;
 				this.isLoading = false;
 			},
 			error: (e) => console.error(e),
@@ -49,9 +54,11 @@ export class StoreComponent {
 	}
 
 	getDogProducts() {
+		this.isLoading = true;
 		this.api.getDogProducts().subscribe({
 			next: (response) => {
 				this.currentProducts = response;
+				this.filteredProducts = response;
 				this.isLoading = false;
 			},
 			error: (e) => console.error(e),
@@ -59,9 +66,11 @@ export class StoreComponent {
 	}
 
 	getFishProducts() {
+		this.isLoading = true;
 		this.api.getFishproducts().subscribe({
 			next: (response) => {
 				this.currentProducts = response;
+				this.filteredProducts = response;
 				this.isLoading = false;
 			},
 			error: (e) => console.error(e),
@@ -69,19 +78,23 @@ export class StoreComponent {
 	}
 
 	getBirdProducts() {
+		this.isLoading = true;
 		this.api.getBirdproducts().subscribe({
 			next: (response) => {
 				this.currentProducts = response;
+				this.filteredProducts = response;
 				this.isLoading = false;
 			},
 			error: (e) => console.error(e),
 		});
 	}
 
-	getProductsByType(type: string) {
-		this.api.getProductsByType(type).subscribe({
+	getProductsByCategory(category: string) {
+		this.isLoading = true;
+		this.api.getProductsByCategory(category).subscribe({
 			next: (response) => {
 				this.currentProducts = response;
+				this.filteredProducts = response;
 				this.isLoading = false;
 			},
 			error: (e) => console.error(e),
@@ -109,28 +122,28 @@ export class StoreComponent {
 		this.cartService.addProduct(product);
 	}
 
-	//filteredProducts acts as a variable and each time searchTerm changes it runs
-	get filteredProducts() {
-		if (!this.searchTerm) {
-			return this.currentProducts;
+	filterProducts() {
+		this.filteredProducts = [...this.currentProducts];
+		if (this.searchTerm) {
+			this.filteredProducts = this.currentProducts.filter(
+				(product) =>
+					product.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+					product.description.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+					product.category?.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+					product.petType?.toLowerCase().includes(this.searchTerm.toLowerCase())
+			);
 		}
-
-		return this.currentProducts.filter(
-			(product) =>
-				product.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-				product.description.toLowerCase().includes(this.searchTerm.toLowerCase())
-		);
 	}
 
 	ngOnInit() {
-		let productType;
+		let productCategory;
 
 		this.route.queryParamMap.subscribe((params) => {
-			productType = params.get("productType");
+			productCategory = params.get("productCategory");
 		});
 
-		if (productType) {
-			switch (productType) {
+		if (productCategory) {
+			switch (productCategory) {
 				case "dog":
 					this.getDogProducts();
 					break;
@@ -144,17 +157,17 @@ export class StoreComponent {
 					this.getFishProducts();
 					break;
 				case "toys":
-					this.getProductsByType(productType);
+					this.getProductsByCategory(productCategory);
 					break;
 				case "grooming":
-					this.getProductsByType(productType);
+					this.getProductsByCategory(productCategory);
 					break;
 				case "food":
-					this.getProductsByType(productType);
+					this.getProductsByCategory(productCategory);
 					break;
 			}
 		} else {
-			this.fetchData();
+			this.getAllProducts();
 		}
 	}
 }

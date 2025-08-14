@@ -2,18 +2,18 @@
 	<div class="columns is-mobile m-0">
 		<div #sidebar class="sidebar column is-1-desktop is-8-mobile has-background-grey p-0 hidden">
 			<aside class="menu p-3">
-				<p class="menu-label mb-2 is-size-3-desktop is-size-4-mobile has-text-centered has-text-white">Pet</p>
+				<p class="menu-label mb-2 is-size-4-desktop is-size-4-mobile has-text-centered has-text-white">Pet</p>
 				<ul class="menu-list">
 					<li><a class="has-background-grey has-text-white" (click)="getDogProducts()">Dog</a></li>
 					<li><a class="has-background-grey has-text-white" (click)="getCatProducts()">Cat</a></li>
 					<li><a class="has-background-grey has-text-white" (click)="getBirdProducts()">Bird</a></li>
 					<li><a class="has-background-grey has-text-white" (click)="getFishProducts()">Fish</a></li>
 				</ul>
-				<p class="menu-label mb-2 is-size-3-desktop is-size-4-mobile has-text-centered has-text-white">Product</p>
+				<p class="menu-label mb-2 is-size-4-desktop is-size-4-mobile has-text-centered has-text-white">Category</p>
 				<ul class="menu-list">
-					<li><a class="has-background-grey has-text-white" (click)="getProductsByType('food')">Food</a></li>
-					<li><a class="has-background-grey has-text-white" (click)="getProductsByType('toys')">Toys</a></li>
-					<li><a class="has-background-grey has-text-white" (click)="getProductsByType('grooming')">Grooming</a></li>
+					<li><a class="has-background-grey has-text-white" (click)="getProductsByCategory('food')">Food</a></li>
+					<li><a class="has-background-grey has-text-white" (click)="getProductsByCategory('toys')">Toys</a></li>
+					<li><a class="has-background-grey has-text-white" (click)="getProductsByCategory('grooming')">Grooming</a></li>
 				</ul>
 			</aside>
 			<button class="sidebarBtn button is-link p-2 is-block" (click)="toggleSidebar()">
@@ -25,13 +25,20 @@
 
 		<div #products class="products column is-full-mobile is-11-desktop">
 			<div class="searchDiv is-flex is-justify-content-center">
-				<input [(ngModel)]="searchTerm" class="searchBar p-2" type="text" placeholder="Search products" />
+				<input
+					[(ngModel)]="searchTerm"
+					(ngModelChange)="filterProducts()"
+					class="searchBar p-2"
+					type="text"
+					placeholder="Search products" />
 			</div>
 			<div class="columns is-multiline m-0">
-				<div *ngIf="isLoading" class="loading-indicator column is-full has-text-centered">
+				@if (isLoading) {
+				<div class="loading-indicator column is-full has-text-centered">
 					<p class="has-text-black">Loading products...</p>
 					<button class="button is-loading">Loading</button>
 				</div>
+				} @else {
 				<div [ngClass]="['column', 'is-one-quarter']" *ngFor="let product of filteredProducts">
 					<div class="card">
 						<div class="card-image">
@@ -52,6 +59,7 @@
 						</div>
 					</div>
 				</div>
+				}
 			</div>
 		</div>
 	</div>

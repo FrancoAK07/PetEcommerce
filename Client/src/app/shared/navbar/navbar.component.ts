@@ -1,11 +1,11 @@
 import { Component, ViewChild, Renderer2, ElementRef, inject } from "@angular/core";
 import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { CartService } from "../services/cart.service";
+import { CartService } from "../../core/services/cart.service";
 import { Dialog } from "@angular/cdk/dialog";
-import { LoginFormComponent } from "../login-form/login-form.component";
-import { RegisterFormComponent } from "../register-form/register-form.component";
-import { AuthService } from "../services/auth.service";
+import { LoginFormComponent } from "../../features/login-form/login-form.component";
+import { RegisterFormComponent } from "../../features/register-form/register-form.component";
+import { AuthService } from "../../core/services/auth.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({

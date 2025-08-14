@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ApiService } from "../services/api.service";
+import { ApiService } from "../../core/services/api.service";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
 
@@ -23,8 +23,8 @@ export class HomeComponent {
 		});
 	}
 
-	goToStore(productType: string) {
-		this.router.navigate(["/store"], { queryParams: { productType } });
+	goToStore(productCategory: string) {
+		this.router.navigate(["/store"], { queryParams: { productCategory } });
 	}
 
 	ngOnInit() {

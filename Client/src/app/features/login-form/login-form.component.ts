@@ -1,7 +1,7 @@
 import { Component, inject } from "@angular/core";
-import { ApiService } from "../services/api.service";
-import { AuthService } from "../services/auth.service";
-import { User } from "../models/user.model";
+import { ApiService } from "../../core/services/api.service";
+import { AuthService } from "../../core/services/auth.service";
+import { User } from "../../shared/models/user.model";
 import { FormsModule } from "@angular/forms";
 import { Dialog } from "@angular/cdk/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";

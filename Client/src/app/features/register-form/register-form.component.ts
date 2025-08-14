@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { User } from "../models/user.model";
-import { ApiService } from "../services/api.service";
+import { User } from "../../shared/models/user.model";
+import { ApiService } from "../../core/services/api.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
