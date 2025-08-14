@@ -63,8 +63,8 @@ public class BirdEntityServiceImpl implements BirdEntityService {
     }
 
     @Override
-    public List<BirdEntity> getProductsByType(String type) {
-        List<BirdEntity> products = birdEntityRepository.findByType(type);
+    public List<BirdEntity> getProductsByCategory(String type) {
+        List<BirdEntity> products = birdEntityRepository.findByCategory(type);
         return products;
     }
 }

@@ -11,5 +11,5 @@ public interface CatEntityService {
     List<CatEntity> getDiscountProducts();
     List<CatEntity> getCatFood();
     List<CatEntity> getCatGrooming();
-    List<CatEntity> findProductsByType(String type);
+    List<CatEntity> findProductsByCategory(String type);
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("/api/fishentities")
+@RequestMapping("/api/fishproducts")
 public class FishEntityController {
     @Autowired
     private FishEntityService fishEntityService;
@@ -36,8 +36,8 @@ public class FishEntityController {
     }
 
     @GetMapping("/byType")
-    public List<FishEntity> getproductsByType(@RequestParam String type) {
-        return fishEntityService.getProductsByType(type);
+    public List<FishEntity> getproductsByCategory(@RequestParam String type) {
+        return fishEntityService.getProductsByCategory(type);
     }
 
 

@@ -11,5 +11,5 @@ public interface DogEntityService {
     List<DogEntity> getDiscountProducts();
     List<DogEntity> getDogFood();
     List<DogEntity> getDogGrooming();
-    List<DogEntity> findProductByType(String type);
+    List<DogEntity> findProductByCategory(String type);
 }

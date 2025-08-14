@@ -61,8 +61,8 @@ public class FishEntityServiceImpl implements FishEntityService {
     }
 
     @Override
-    public List<FishEntity> getProductsByType(String type) {
-        List<FishEntity> products = fishEntityRepository.findByType(type);
+    public List<FishEntity> getProductsByCategory(String type) {
+        List<FishEntity> products = fishEntityRepository.findByCategory(type);
         return products;
     }
 }

@@ -10,12 +10,12 @@ public interface BirdEntityRepository extends JpaRepository<BirdEntity, Long> {
      @Query(value = "SELECT * FROM bird_products WHERE discount > 0", nativeQuery = true)
     List<BirdEntity> findDiscountProducts();
 
-    @Query(value = "SELECT * FROM bird_products WHERE type = 'food'", nativeQuery = true)
+    @Query(value = "SELECT * FROM bird_products WHERE category = 'food'", nativeQuery = true)
     List<BirdEntity> getBirdFood();
 
-    @Query(value = "SELECT * FROM bird_products WHERE type = 'grooming'", nativeQuery = true)
+    @Query(value = "SELECT * FROM bird_products WHERE category = 'grooming'", nativeQuery = true)
     List<BirdEntity> getBirdGrooming();
 
-    List<BirdEntity> findByType(String type);
+    List<BirdEntity> findByCategory(String type);
 
 }

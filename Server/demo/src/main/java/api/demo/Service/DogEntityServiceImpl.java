@@ -61,8 +61,8 @@ public class DogEntityServiceImpl implements DogEntityService {
     }
 
     @Override
-    public List<DogEntity> findProductByType(String type) {
-        List<DogEntity> products = myEntityRepository.findByType(type);
+    public List<DogEntity> findProductByCategory(String type) {
+        List<DogEntity> products = myEntityRepository.findByCategory(type);
         return products;
     }
 }

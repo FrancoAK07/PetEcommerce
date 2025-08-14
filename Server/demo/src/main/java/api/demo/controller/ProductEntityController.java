@@ -5,6 +5,9 @@ import java.util.List;
 
 import api.demo.service.ProductEntityService;
 import api.demo.model.Product;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -26,8 +29,13 @@ public class ProductEntityController {
 
     @GetMapping("/category")
     public List<Product> getProductsByCategory(@RequestParam String category) {
-        System.out.println("this is the category: " + category);
         return productService.getProductsByCategory(category);
     }
+
+    @GetMapping("/discounts")
+    public List<Product> getDiscountProducts() {
+        return productService.getDiscountProducts();
+    }
+
 
 }

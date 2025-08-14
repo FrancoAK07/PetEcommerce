@@ -33,4 +33,10 @@ public class ProductEntityServiceImpl implements ProductEntityService {
         return allProducts;
     }
 
+    @Override
+    public List<Product> getDiscountProducts() {
+        List<Product> discountProducts = productRepo.findDiscountProducts();
+        return discountProducts;
+    }
+
 }

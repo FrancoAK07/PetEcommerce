@@ -61,8 +61,8 @@ public class CatEntityServiceImpl implements CatEntityService {
     }
 
     @Override
-    public List<CatEntity> findProductsByType(String type) {
-        List<CatEntity> products = catEntityRepository.findByType(type);
+    public List<CatEntity> findProductsByCategory(String type) {
+        List<CatEntity> products = catEntityRepository.findByCategory(type);
         return products;
     }
 

@@ -8,23 +8,33 @@ public class DogEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String description;
+
     private String img;
+
     private Float price;
-    private String type;
+
+     private String category;
+
+    @Column(name = "pet_type")
+    private String petType;
+
     private Integer discount;
 
     public DogEntity() {
 
     }
 
-    public DogEntity(String name, String description, String img, Float price, String type, Integer discount) {
+    public DogEntity(String name, String description, String img, Float price, String category, String petType, Integer discount) {
         this.name = name;
         this.description = description;
         this.img = img;
         this.price = price;
-        this.type = type;
+        this.category = category;
+        this.petType = petType;
         this.discount = discount;
     }
 
@@ -69,12 +79,20 @@ public class DogEntity {
         this.price = price;
     }
 
-    public String getType() {
-        return type;
+    public String getCategory() {
+        return category;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getpetType() {
+        return petType;
+    }
+
+    public void setpetType(String petType) {
+        this.petType = petType;
     }
 
     public Integer getDiscount() {

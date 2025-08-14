@@ -11,5 +11,5 @@ public interface FishEntityService {
     List<FishEntity> getDiscountProducts();
     List<FishEntity> getFishFood();
     List<FishEntity> getFishGrooming();
-    List<FishEntity> getProductsByType(String type);
+    List<FishEntity> getProductsByCategory(String type);
 }

@@ -6,4 +6,5 @@ public interface ProductEntityService {
     List<Product> getProductsByPetType(String petType);
     List<Product> getAllProducts();
     List<Product> getProductsByCategory(String category);
+    List<Product> getDiscountProducts();
 }

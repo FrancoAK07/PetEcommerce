@@ -11,6 +11,6 @@ public interface BirdEntityService {
     List<BirdEntity> getDiscountProducts();
     List<BirdEntity> getBirdFood();
     List<BirdEntity> getBirdGrooming();
-    List<BirdEntity> getProductsByType(String type);
+    List<BirdEntity> getProductsByCategory(String type);
 
 }

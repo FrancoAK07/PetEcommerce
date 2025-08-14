@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("/api/birdentities")
+@RequestMapping("/api/birdproducts")
 public class BirdEntityController {
     @Autowired
     private BirdEntityService birdEntityService;
@@ -37,7 +37,7 @@ public class BirdEntityController {
 
     @GetMapping("/byType")
     public List<BirdEntity> getProductsByType(@RequestParam String type) {
-        return birdEntityService.getProductsByType(type);
+        return birdEntityService.getProductsByCategory(type);
     }
 
 

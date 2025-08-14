@@ -9,7 +9,7 @@ import api.demo.service.CatEntityService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/catentities")
+@RequestMapping("/api/catproducts")
 public class CatEntityController {
     @Autowired
     private CatEntityService catEntityService;
@@ -33,8 +33,8 @@ public class CatEntityController {
     }
 
      @GetMapping("/byType")
-    public List<CatEntity> getProductsByType(@RequestParam String type) {
-        return catEntityService.findProductsByType(type);
+    public List<CatEntity> getProductsByCategory(@RequestParam String type) {
+        return catEntityService.findProductsByCategory(type);
     }
 
     @GetMapping("/catfood")

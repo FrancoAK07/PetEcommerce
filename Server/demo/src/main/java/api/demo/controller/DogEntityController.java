@@ -33,8 +33,8 @@ public class DogEntityController {
     }
 
      @GetMapping("/byType")
-    public List<DogEntity> getProductsByType(@RequestParam String type) {
-        return myEntityService.findProductByType(type);
+    public List<DogEntity> getProductsByCategory(@RequestParam String type) {
+        return myEntityService.findProductByCategory(type);
     }
 
     @GetMapping("/dogfood")
